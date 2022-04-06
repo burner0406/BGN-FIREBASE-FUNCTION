@@ -1,0 +1,20 @@
+### GET request
+GET https://api.clayful.io/v1/products
+Content-Type: application/json
+Accept: application/json
+Accept-Encoding: gzip
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjJkY2UxYzIwNzBiZmY3MDQwYTk5OTdjNTRiNmNkY2Q0YWJjZWZkOTFmZGU0MzY3NTc1OTdlNjE3OTBiOWEzNDUiLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNjQ1NjAyODcxLCJzdG9yZSI6IlVYQ0UyTFlNUTI5RS5MOEpTTVlMNzhLRUQiLCJzdWIiOiIyQjZMU1I2WVNENFgifQ.xPcoY8RhAuNyabFetttTKvH0ghdDlAetr5fqCNGiB9c
+
+{
+"search:name": "시거드1",
+"searchMatch": "partial"
+}
+
+### POST request
+https://asia-northeast3-bourgogne-f0651.cloudfunctions.net/product-hookProductCreate
+Content-Type: application/json
+
+{
+  "collec": "TEST",
+  "text": "www.ttt.com"
+}

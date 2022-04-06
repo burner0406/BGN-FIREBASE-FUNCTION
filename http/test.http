@@ -1,0 +1,29 @@
+### POST request
+POST https://asia-northeast3-bourgogne-f0651.cloudfunctions.net/store-addTest
+Content-Type: application/json
+
+{
+  "collec": "TEST",
+  "text": "www.ttt.com"
+}
+
+### POST request
+POST https://asia-northeast3-bourgogne-f0651.cloudfunctions.net/store-getTest
+Content-Type: application/json
+
+{
+  "collec": "TEST",
+  "docId": "sSj6W6hEDYYkqROSovTn"
+}
+
+### POST request
+POST https://asia-northeast3-bourgogne-f0651.cloudfunctions.net/clayful-getProduct
+Content-Type: application/json
+
+{
+  "name": "와"
+}
+
+### POST request
+POST https://asia-northeast3-bourgogne-f0651.cloudfunctions.net/clayful-getMysql
+Content-Type: application/json

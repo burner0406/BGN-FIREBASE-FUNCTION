@@ -1,0 +1,33 @@
+"use strict";
+
+// [START all]
+// [START import]
+// The Cloud Functions for Firebase SDK to create Cloud Functions and set up triggers.
+const functions = require("firebase-functions");
+
+// The Firebase Admin SDK to access Firestore.
+const admin = require("firebase-admin");
+const Clayful = require("clayful");
+admin.initializeApp();
+
+Clayful.config({
+    client: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjUzMDhjMmNhZDVjYTU3NDVhZDAxM2I1OTU5MjRmYmM1MjRhMzVlMzRmZWIzNTQ3MzkzN2RjOGJmZjliYjIxNjciLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNjQ2NzAwMTQ0LCJzdG9yZSI6IlVYQ0UyTFlNUTI5RS5MOEpTTVlMNzhLRUQiLCJzdWIiOiJTTFU5RUJUQ0NHVkQifQ.X80kn8mpWdg-mhmbQKpf7qKMlICRhJy10gpLlHESLdk",
+    //customer:      "<customer-auth-token>",
+    //debugLanguage: "ko"
+});
+// [END import]
+
+exports.getList = functions.region("asia-northeast3").https.onRequest(async (req, res) => {
+    //const response = req.body.response;
+    functions.logger.log("req :", req.body);
+
+    const db = admin.firestore();
+    const vendor = db.collection("vendor");
+
+    const vendorList = await vendor.get()
+    functions.logger.log("Vendor Data : ", vendorList);
+
+    res.json(vendorList);
+});
+
+// [END all]
